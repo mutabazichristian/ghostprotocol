@@ -1,9 +1,11 @@
 const { Sequelize } = require('sequelize');
-const { password } = require('./tokens')
-
-const sequelize = new Sequelize('ghostprotocol', 'mutabazi', password, {
-    host: 'localhost',
-    dialect: 'mysq'
+const password = process.env.DB_PASSWORD;
+const database = process.env.DB_NAME;
+const username = process.env.DB_USERNAME;
+const host = process.env.DB_HOST;
+const sequelize = new Sequelize(database, username, password, {
+    host: host,
+    dialect: 'mysql'
 })
 
-export default Sequelize;
+module.exports = sequelize;

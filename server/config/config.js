@@ -1,8 +1,7 @@
-const { password } = require("./tokens");
 
 module.exports = {
   development: {
-    username: 'mutabazi',
+    username: process,
     password: password,
     database: 'ghostprotocoldb',
     host: 'localhost',

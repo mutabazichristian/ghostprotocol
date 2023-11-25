@@ -7,6 +7,7 @@ function SignupPage() {
     return (
         <div>
             <form action=""></form>
+            <p>this is the sign in page</p>
         </div>
     );
 }

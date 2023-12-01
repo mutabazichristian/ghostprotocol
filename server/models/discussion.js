@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Discussion.init({
-    discuccionId: {
+    discussionId: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,

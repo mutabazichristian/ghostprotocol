@@ -4,6 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const sequelize = require('./config/database');
 const bodyParser = require('body-parser');
+const discussionRouter = require('./routes/discussionRouter');
 const prompterRouter = require('./routes/prompterRouter');
 
 //consts
@@ -12,10 +13,12 @@ PORT = process.env.PORT || 8081;
 const app = express();
 const corsOptions = {
     origin: 'http://localhost:3000'
+    // origin: 'https://funny-pothos-2826b5.netlify.app/'
 }
 app.use(cors(corsOptions));
 app.use(bodyParser.json())
 app.use('/prompter', prompterRouter);
+app.use('/discussion', discussionRouter);
 
 //trying the sequelize connection
 sequelize.authenticate()

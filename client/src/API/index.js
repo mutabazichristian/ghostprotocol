@@ -1,5 +1,5 @@
 import axios from 'axios';
-const server= process.env.SERVER_HOST;
+const server= 'http://localhost:8081'
 
 const instance = axios.create({
     baseURL: `${server}`

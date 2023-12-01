@@ -12,6 +12,7 @@
 /build
 
 # misc
+/src/pusher.sh
 .DS_Store
 .env
 .env.local

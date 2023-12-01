@@ -3,14 +3,19 @@ require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const sequelize = require('./config/database');
+const bodyParser = require('body-parser');
 const prompterRouter = require('./routes/prompterRouter');
 
 //consts
 PORT = process.env.PORT || 8081;
 
 const app = express();
-app.use(cors);
-app.use(prompterRouter);
+const corsOptions = {
+    origin: 'http://localhost:3000'
+}
+app.use(cors(corsOptions));
+app.use(bodyParser.json())
+app.use('/prompter', prompterRouter);
 
 //trying the sequelize connection
 sequelize.authenticate()
